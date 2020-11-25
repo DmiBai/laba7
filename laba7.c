@@ -60,9 +60,9 @@ int main()
 		}
 		k++;
 	}
-	l[i]--;
+	//l[i]--;
 
-	for (i = 0; i < m; i ++){
+	for (i = 0; i < m; i++){
 		printf("%d\t", l[i]);
 	}
 
@@ -74,17 +74,22 @@ int main()
 
 	k = 0;
 
-	/*for (i = 0; i < m; i++) { //Заполнение массива words словами 
-		for (j = 0; j < n; j++) {
-			if ((str[k] != ' ') & (str[k] != '\0')) {
+	for (i = 0; i < m; i++) { //Заполнение массива words словами 
+		for (j = 0; j < l[i]; j++) {
+			if ((str[k] != ' ') && (str[k] != '\0')) {
 			words[i][j] = str[k];
 			}
 			k++;
 		}
 		k++;
-	}*/
+	}
 
-	
+	free(l);
+	free(str);
+
+	for (i = 0; i < m; i++) {
+		free(words[i]);
+	}
 	
 	return 0;
 
